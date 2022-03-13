@@ -17,7 +17,7 @@ greatest_decrease = ["", 9999999999999999999]
 total = 0
 
 
-# read the csv file and create a list of disctionarys
+# read the csv file and create a list of dictionarys
 
 
 with open(budget_csv) as PL_data:
