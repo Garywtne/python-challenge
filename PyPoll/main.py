@@ -1,4 +1,9 @@
+# import dependacies
+
+# os to ensure that the correct operating system is recognised
 import os
+
+# csv to enable the reading of csv files
 import csv
 
 # Path to collect data from the Resources folder
@@ -56,15 +61,16 @@ with open(election_csv) as election_data:
 # open the output_txt variable as writable "w" using the new variable txt_edit
 with open(output_txt, "w") as txt_edit:
 
-    # Create a variable called results holding the formatted output for the total number of votes and print it to the terminal
+    # Create a variable called results holding the formatted output for the total number of votes and print it to the terminal (\n is adding a new line, not required for the final line so that 
+    # the candidate list appears straight after the final line of results
     results = (
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {vote_total}\n"
-        f"-------------------------\n")
+        f"-------------------------")
     
     # print results to the terminal  
-    print(results, end="")
+    print(results)
     
     # Save this vaiable to the text file
     txt_edit.write(results)
@@ -82,10 +88,12 @@ with open(output_txt, "w") as txt_edit:
             winner = candidate
 
         # Create a variable called candidate_result, use it to print each candidate's name, percentage and the numbver of votes
-        candidate_result = f"{candidate}: {percentage:.3f}% ({votes})\n"
+        candidate_result = f"{candidate}: {percentage:.3f}% ({votes})"
+        # candidate_result = f"{candidate}: {percentage:.3f}% ({votes})\n"
 
-        # print candidate_result to the terminal    
-        print(candidate_result, end="")
+        # print candidate_result to the terminal, adding end=""    
+        print(candidate_result)
+        
 
         # Save each candidates name, percentage and number of votes (candidate_votes) to text file
         txt_edit.write(candidate_result)
