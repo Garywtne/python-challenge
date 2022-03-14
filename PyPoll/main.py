@@ -60,13 +60,12 @@ with open(election_csv) as election_data:
 # open the output_txt variable as writable "w" using the new variable txt_edit
 with open(output_txt, "w") as txt_edit:
 
-    # Create a variable called results holding the formatted output for the total number of votes and print it to the terminal (\n is adding a new line, not required for the final line so that 
-    # the candidate list appears straight after the final line of results
+    # Create a variable called results holding the formatted output for the total number of votes and print it to the terminal (\n is adding a new line) required for correct .txt output
     results = (
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {vote_total}\n"
-        f"-------------------------")
+        f"-------------------------\n")
     
     # print results to the terminal  
     print(results)
@@ -86,11 +85,10 @@ with open(output_txt, "w") as txt_edit:
             winner_counter = votes
             winner = candidate
 
-        # Create a variable called candidate_result, use it to print each candidate's name, percentage and the numbver of votes
-        candidate_result = f"{candidate}: {percentage:.3f}% ({votes})"
-        # candidate_result = f"{candidate}: {percentage:.3f}% ({votes})\n"
+        # Create a variable called candidate_result, use it to print each candidate's name, percentage and the numbver of votes, \n adding a new line after each candidate is required to get the correct txt output
+        candidate_result = f"{candidate}: {percentage:.3f}% ({votes})\n"
 
-        # print candidate_result to the terminal, adding end=""    
+        # print candidate_result to the terminal   
         print(candidate_result)
         
 
