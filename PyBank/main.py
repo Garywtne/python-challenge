@@ -6,11 +6,9 @@ import os
 # csv to enable the reading of csv files
 import csv
 
-# Path to collect data from the Resources folder
+# Path to collect data from the Resources folder, check by using print(budget_csv)
 
 budget_csv = os.path.join('Resources', 'budget_data.csv')
-
-# print(budget_csv)
 
 # declare the variables to track and give them initial values
 
@@ -35,22 +33,17 @@ PL_change = []
 greatest_increase = ["", 0]
 
 # This array also has two elements, the first captures the month_change (currenty empty) and the secound the PL_change (set at a number greater than the maximum PL_change) 
-# this enables us to calculate which month_change has the greatest decrease
+# checked by print(max(PL_change)) subsequently removed, this enables us to calculate which month_change has the greatest decrease
 
 greatest_decrease = ["", 2000000]
 
-
-
 # read the csv file and create a list of dictionarys
-
 
 with open(budget_csv) as PL_data:
     reader = csv.reader(PL_data)
 
-    # Read the header row
+    # Read the header row, store as variable called header. use print(header) to check
     header = next(reader)
-
-    # print(header)
 
     # Remove the first row from the loop 
     first_row = next(reader)
@@ -90,9 +83,7 @@ with open(budget_csv) as PL_data:
 #  calculate the average change in profit/loss by dividing the total change by the number of changes
 average_change = sum(PL_change) / len(PL_change)
 
-# print(max(PL_change))
-
-# print the output summary with the correct formatting 
+# print the output summary as individual lines to check output whilst building the code with the correct formatting then..
 
 # print("Financial Analysis")
 # print("-------------------------")

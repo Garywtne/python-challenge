@@ -6,10 +6,9 @@ import os
 # csv to enable the reading of csv files
 import csv
 
-# Path to collect data from the Resources folder
+# Path to collect data from the Resources folder, use print(election_csv) to check
 
 election_csv = os.path.join("Resources", "election_data.csv")
-# print(election_csv)
 
 
 # declare the variables to track and give them initial values
